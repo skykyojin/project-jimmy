@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Tale of Two Cities - Novelku</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">&#128214; Novelku</div>
+            <nav>
+                <a href="index.html">Beranda</a>
+                <a href="index buku.html">Pustaka</a>
+                <a href="login.html">Login</a>
+                <a href="profile.html">Profile</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container reader-container">
+        <div class="book-reader">
+            <div class="reader-header">
+              <nav>
+                <a href="index buku.html" class="back-btn">Kembali</a>
+            </nav>
+                <h1 id="book-title">A Tale of Two Cities</h1>
+                <p id="book-author" class="book-author">Charles Dickens</p>
+            </div>
+
+            <div class="reader-controls">
+                <button id="font-decrease" class="btn-control">A-</button>
+                <button id="font-increase" class="btn-control">A+</button>
+                <button id="bookmark-btn" class="btn-control">Bookmark</button>
+            </div>
+
+            <nav class="chapter-toc">
+                <h3>Daftar Bab</h3>
+                <div class="chapter-list">
+                    <a href="#chapter-1">Bab 1 - Periode</a>
+                    <a href="#chapter-2">Bab 2 - Surat</a>
+                    <a href="#chapter-3">Bab 3 - Bayang-Bayang Malam</a>
+                    <a href="#chapter-4">Bab 4 - Persiapan</a>
+                    <a href="#chapter-5">Bab 5 - Kedai Anggur</a>
+                    <a href="#chapter-6">Bab 6 - Tukang Sepatu</a>
+                </div>
+            </nav>
+
+            <article class="book-content" id="book-content">
+                <h2 id="chapter-1">CHAPTER I. The Period</h2>
+                <p>It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the season of Light, it was the season of Darkness, it was the spring of hope, it was the winter of despair.</p>
+                <p>There were a king with a large jaw and a queen with a plain face, on the throne of England; there were a king with a large jaw and a queen with a fair face, on the throne of France.</p>
+
+                <h2 id="chapter-2">CHAPTER II. The Mail</h2>
+                <p>It was the Dover road that lay, on a Friday night late in November, before the first of the persons with whom this history has business. The Dover road lay, as to him, beyond the Dover mail, as it lumbered up Shooter's Hill.</p>
+                <p>With drooping heads and tremulous tails, they mashed their way through the thick mud, floundering and stumbling between whiles, as if they were falling to pieces at the larger joints.</p>
+
+                <h2 id="chapter-3">CHAPTER III. The Night Shadows</h2>
+                <p>A wonderful fact to reflect upon, that every human creature is constituted to be that profound secret and mystery to every other.</p>
+                <p>The stillness consequent on the cessation of the rumbling and labouring of the coach, added to the stillness of the night, made it very quiet indeed.</p>
+
+                <h2 id="chapter-4">CHAPTER IV. The Preparation</h2>
+                <p>When the mail got successfully to Dover, in the course of the forenoon, the head drawer at the Royal George Hotel opened the coach-door as his custom was.</p>
+                <p>"There will be a packet to Calais, tomorrow, drawer?"</p>
+
+                <h2 id="chapter-5">CHAPTER V. The Wine-shop</h2>
+                <p>A large cask of wine had been dropped and broken, in the street. The mishap was attended with a circumstance that filled the whole street with confusion.</p>
+                <p>Some men kneeled down, made scoops of their hands, and sipped, or tried to stop the wine with their hats.</p>
+
+                <h2 id="chapter-6">CHAPTER VI. The Shoemaker</h2>
+                <p>"Good day," said Monsieur Defarge, looking down at the white head that bent low over the shoemaker's bench.</p>
+                <p>The shoemaker looked up, and saw a man with a rough, weather-beaten face, and eyes that seemed to have seen much of the world.</p>
+            </article>
+
+            <div class="reader-navigation">
+                <a href="#" class="nav-btn">Sebelumnya</a>
+                <span class="page-indicator">Halaman 1 dari 1</span>
+                <a href="#" class="nav-btn">Selanjutnya</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p> 2026 Novelku. Dibuat dengan cinta untuk para pembaca.</p>
+    </footer>
+
+    <script>
+        let fontSize = 18;
+        document.getElementById('font-increase').addEventListener('click', () => {
+            fontSize = Math.min(fontSize + 2, 28);
+            document.getElementById('book-content').style.fontSize = fontSize + 'px';
+        });
+        document.getElementById('font-decrease').addEventListener('click', () => {
+            fontSize = Math.max(fontSize - 2, 12);
+            document.getElementById('book-content').style.fontSize = fontSize + 'px';
+        });
+        document.getElementById('bookmark-btn').addEventListener('click', () => {
+            alert('Bookmark disimpan!');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar - Novelku</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="login-page">
+    <div class="login-container">
+        <div class="login-card">
+            <h2>Buat Akun Baru</h2>
+            <p>Daftar untuk mengakses Novelku</p>
+            <form id="registerForm">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" placeholder="Masukkan username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Masukkan password" required>
+                </div>
+                <div class="form-group">
+                    <label for="nama">Nama Lengkap</label>
+                    <input type="text" id="nama" placeholder="Masukkan nama lengkap" required>
+                </div>
+                <button type="submit" class="btn-login">Daftar</button>
+                <p id="errorMsg" class="error-msg" style="display:none;"></p>
+            </form>
+            <p class="register-link">Sudah punya akun? <a href="login.html">Login di sini</a></p>
+            <a href="index.html" class="back-home">Kembali ke Beranda</a>
+        </div>
+    </div>
+
+    <script>
+        const defaultAccounts = [
+            { id: 1, username: "admin", password: "admin123", nama: "Administrator", email: "admin@perpustakaan.id" },
+            { id: 2, username: "pembaca", password: "baca123", nama: "Pembaca Hebat", email: "pembaca@perpustakaan.id" }
+        ];
+
+        document.getElementById('registerForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const username = document.getElementById('username').value.trim();
+            const password = document.getElementById('password').value;
+            const nama = document.getElementById('nama').value.trim();
+            const errorMsg = document.getElementById('errorMsg');
+
+            errorMsg.style.display = 'none';
+            errorMsg.textContent = '';
+
+            const registered = JSON.parse(localStorage.getItem('registeredAccounts') || '[]');
+            const allAccounts = [...defaultAccounts, ...registered];
+
+            if (allAccounts.some(a => a.username === username)) {
+                errorMsg.textContent = 'Username sudah digunakan.';
+                errorMsg.style.display = 'block';
+                return;
+            }
+
+            const newAccount = {
+                id: Date.now(),
+                username: username,
+                password: password,
+                nama: nama,
+                email: username + '@perpustakaan.id'
+            };
+
+            registered.push(newAccount);
+            localStorage.setItem('registeredAccounts', JSON.stringify(registered));
+            localStorage.setItem('currentUser', JSON.stringify(newAccount));
+            window.location.href = 'profile.html';
+        });
+    </script>
+</body>
+</html>

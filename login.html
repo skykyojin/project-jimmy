@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Novelku</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="login-page">
+    <div class="login-container">
+        <div class="login-card">
+            <h2>Masuk ke Perpustakaan</h2>
+            <p>Silakan login untuk mengakses fitur lengkap</p>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" placeholder="Masukkan username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Masukkan password" required>
+                </div>
+                <button type="submit" class="btn-login">Login</button>
+                <p id="errorMsg" class="error-msg" style="display:none;"></p>
+            </form>
+            <p class="register-link">Belum punya akun? <a href="register.html">Daftar di sini</a></p>
+            <a href="index.html" class="back-home">Kembali ke Beranda</a>
+        </div>
+    </div>
+
+    <script>
+        const defaultAccounts = [
+            { id: 1, username: "admin", password: "admin123", nama: "Administrator", email: "admin@perpustakaan.id" },
+            { id: 2, username: "pembaca", password: "baca123", nama: "Pembaca Hebat", email: "pembaca@perpustakaan.id" }
+        ];
+
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const username = document.getElementById('username').value.trim();
+            const password = document.getElementById('password').value;
+            const errorMsg = document.getElementById('errorMsg');
+
+            errorMsg.style.display = 'none';
+            errorMsg.textContent = '';
+
+            const registered = JSON.parse(localStorage.getItem('registeredAccounts') || '[]');
+            const allAccounts = [...defaultAccounts, ...registered];
+
+            const found = allAccounts.find(a => a.username === username && a.password === password);
+
+            if (found) {
+                localStorage.setItem('currentUser', JSON.stringify(found));
+                window.location.href = 'profile.html';
+            } else {
+                errorMsg.textContent = 'Username atau password salah.';
+                errorMsg.style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>

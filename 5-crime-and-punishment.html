@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crime and Punishment - Novelku</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">&#128214; Novelku</div>
+            <nav>
+                <a href="index.html">Beranda</a>
+                <a href="index buku.html">Pustaka</a>
+                <a href="login.html">Login</a>
+                <a href="profile.html">Profile</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container reader-container">
+        <div class="book-reader">
+            <div class="reader-header">
+               <nav>
+                <a href="index buku.html" class="back-btn">Kembali</a>
+            </nav>
+                <h1 id="book-title">Crime and Punishment</h1>
+                <p id="book-author" class="book-author">Fyodor Dostoevsky</p>
+            </div>
+
+            <div class="reader-controls">
+                <button id="font-decrease" class="btn-control">A-</button>
+                <button id="font-increase" class="btn-control">A+</button>
+                <button id="bookmark-btn" class="btn-control">Bookmark</button>
+            </div>
+
+            <nav class="chapter-toc">
+                <h3>Daftar Bab</h3>
+                <div class="chapter-list">
+                    <a href="#chapter-1">Bab 1</a>
+                    <a href="#chapter-2">Bab 2</a>
+                    <a href="#chapter-3">Bab 3</a>
+                    <a href="#chapter-4">Bab 4</a>
+                    <a href="#chapter-5">Bab 5</a>
+                    <a href="#chapter-6">Bab 6</a>
+                </div>
+            </nav>
+
+            <article class="book-content" id="book-content">
+                <h2 id="chapter-1">PART I - CHAPTER I</h2>
+                <p>On an exceptionally hot evening early in July a young man came out of the garret in which he lodged in S. Place and walked slowly, as though in hesitation, towards K. bridge.</p>
+                <p>He had successfully avoided meeting his landlady on the staircase. His garret was under the roof of a high, five-storied house, and was more like a cupboard than a room.</p>
+                <p>It was a tiny cell, barely six feet long, and in it stood a bed, a table, and a chair. The young man had just turned twenty-six, and was of medium height, with dark hair and dark eyes.</p>
+
+                <h2 id="chapter-2">PART I - CHAPTER II</h2>
+                <p>So he lay a very long while, almost in a state of torpor. He heard the landlady's footsteps, and the clatter of the plates, and the voices of the students in the next room.</p>
+                <p>He was so lost in thought that he did not even hear the knock at the door. When he finally looked up, he saw his friend Razumikhin standing in the doorway.</p>
+                <p>"Are you ill?" asked Razumikhin, looking at him with concern. "You look terrible."</p>
+
+                <h2 id="chapter-3">PART I - CHAPTER III</h2>
+                <p>Raskolnikov got up, took his hat, and went out into the street. It was a sultry, oppressive evening. The air was thick with dust and the smell of tar.</p>
+                <p>He walked without aim, turning now into one street and now into another, paying no attention to where he was going. His mind was filled with thoughts that made his head ache.</p>
+                <p>"Am I a louse like everyone else, or am I a man?" he thought. "Can I cross the line, or can I not?"</p>
+
+                <h2 id="chapter-4">PART I - CHAPTER IV</h2>
+                <p>The old woman was standing before him, pale and trembling, with a look of terror in her eyes. She held a small icon in her hand.</p>
+                <p>"What do you want?" she asked in a shaking voice.</p>
+                <p>Raskolnikov raised the axe and brought it down with all his strength. There was a cry, and the old woman fell to the ground.</p>
+                <p>He struck her again and again, until she lay still. Then he searched her pockets, took the keys, and locked the door behind him as he left.</p>
+
+                <h2 id="chapter-5">PART I - CHAPTER V</h2>
+                <p>When he awoke the next morning, it was already late. He got up, washed, dressed, and went out into the street.</p>
+                <p>The day was bright and clear. People were going about their business as usual. No one seemed to know what had happened the night before.</p>
+                <p>He walked to the Haymarket, and then to the police station, to hear what people were saying. But no one mentioned the murder. It was as if nothing had happened.</p>
+
+                <h2 id="chapter-6">PART I - CHAPTER VI</h2>
+                <p>Sonya Marmeladova lived in a small room with her mother and half-brother. She was a tall, thin girl, with fair hair and blue eyes that seemed too large for her face.</p>
+                <p>She had been forced into a life of shame to support her family, and she bore her cross with a meekness that was almost saintly.</p>
+                <p>Raskolnikov went to see her, and told her what he had done. She did not recoil from him, but took his hand and said, "You have come to me for help. I will help you."</p>
+            </article>
+
+            <div class="reader-navigation">
+                <a href="#" class="nav-btn">Sebelumnya</a>
+                <span class="page-indicator">Halaman 1 dari 1</span>
+                <a href="#" class="nav-btn">Selanjutnya</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p> 2026 Novelku. Dibuat dengan cinta untuk para pembaca.</p>
+    </footer>
+
+    <script>
+        let fontSize = 18;
+        document.getElementById('font-increase').addEventListener('click', () => {
+            fontSize = Math.min(fontSize + 2, 28);
+            document.getElementById('book-content').style.fontSize = fontSize + 'px';
+        });
+        document.getElementById('font-decrease').addEventListener('click', () => {
+            fontSize = Math.max(fontSize - 2, 12);
+            document.getElementById('book-content').style.fontSize = fontSize + 'px';
+        });
+        document.getElementById('bookmark-btn').addEventListener('click', () => {
+            alert('Bookmark disimpan!');
+        });
+    </script>
+</body>
+</html>
