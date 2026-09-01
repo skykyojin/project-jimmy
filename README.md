@@ -1,2 +1,2 @@
 # project jimmy
-<p>[https://skykyojin.github.io/project jimmy/](https://skykyojin.github.io/project-jimmy/)</p>
+<p>https://skykyojin.github.io/project-jimmy/</p>
